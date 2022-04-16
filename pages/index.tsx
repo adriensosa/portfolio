@@ -1,10 +1,8 @@
 import Head from "next/head";
-import LocomotiveScroll from "locomotive-scroll";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { useEffect } from "react";
-const Home: NextPage = () => {
-  useEffect(() => {
-    const scroll = new LocomotiveScroll();
-  });
+const Home: any = () => {
+  const { scroll } = useLocomotiveScroll();
 
   return (
     <div>
