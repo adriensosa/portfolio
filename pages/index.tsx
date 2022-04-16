@@ -1,8 +1,15 @@
 import Head from "next/head";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
 import { useEffect } from "react";
+import {
+  PrismicText,
+  useFirstPrismicDocument,
+  useAllPrismicDocumentsByType,
+} from "@prismicio/react";
 const Home: any = () => {
   const { scroll } = useLocomotiveScroll();
+  // const [documents] = useAllPrismicDocumentsByType("projects");
+  const [document] = useFirstPrismicDocument();
 
   return (
     <div>
@@ -52,6 +59,7 @@ const Home: any = () => {
             <p>fdfdf</p>
           </div>
         </div>
+        <div>{document && <PrismicText field={document.data.name} />}</div>
       </main>
 
       <footer>footer</footer>
