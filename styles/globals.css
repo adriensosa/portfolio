@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-  @apply text-9xl font-bold opacity-0;
+  @apply text-5xl opacity-0 font-PrestoWide uppercase tracking-wider;
   display: block;
   opacity: 0;
   transform: translateY(100%) rotateX(-80deg);
@@ -35,17 +35,55 @@ html.has-scroll-init h1 {
 }
 
 h2 {
-  @apply text-7xl font-bold;
+  @apply text-3xl font-PrestoWide;
 }
 h2 span {
-  @apply inline-block;
+  @apply inline-block font-PrestoWide;
 }
 
-.first {
+.first,
+.second {
   height: 100vh;
   @apply flex justify-center flex-col;
 }
 
-p {
-  height: 100vh;
+.second {
+  @apply items-center;
+}
+
+.second h1 {
+  @apply whitespace-nowrap uppercase;
+  line-height: 1.5;
+  -webkit-text-stroke: 1px #000;
+  color: transparent;
+}
+
+.second div:nth-child(6) h1 {
+  @apply whitespace-nowrap uppercase text-content;
+  -webkit-text-stroke: 0px #000;
+}
+
+.second div:nth-child(1) h1,
+.second div:nth-child(11) h1 {
+  @apply opacity-5;
+}
+
+.second div:nth-child(2) h1,
+.second div:nth-child(10) h1 {
+  @apply opacity-10;
+}
+
+.second div:nth-child(3) h1,
+.second div:nth-child(9) h1 {
+  @apply opacity-25;
+}
+
+.second div:nth-child(4) h1,
+.second div:nth-child(8) h1 {
+  @apply opacity-50;
+}
+
+.second div:nth-child(5) h1,
+.second div:nth-child(7) h1 {
+  @apply opacity-75;
 }

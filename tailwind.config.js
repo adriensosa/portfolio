@@ -14,5 +14,8 @@ module.exports = {
         dark: "#1a202c",
       },
     },
+    fontFamily: {
+      PrestoWide: ["PrestoWide", "sans-serif"],
+    },
   },
 };

@@ -2,6 +2,10 @@ import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import { useRef } from "react";
 import { LocomotiveScrollProvider as RLSProvider } from "react-locomotive-scroll";
+import Link from "next/link";
+import { PrismicProvider } from "@prismicio/react";
+import { PrismicPreview } from "@prismicio/next";
+import { linkResolver, repositoryName } from "../prismicio";
 
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import "../styles/globals.css";
@@ -29,7 +33,18 @@ function MyApp({ Component, pageProps }: AppProps) {
       containerRef={containerRef}
     >
       <div data-scroll-container ref={containerRef}>
-        <Component {...pageProps} />;
+        <PrismicProvider
+          linkResolver={linkResolver}
+          internalLinkComponent={({ href, children, ...props }) => (
+            <Link href={href}>
+              <a {...props}>{children}</a>
+            </Link>
+          )}
+        >
+          <PrismicPreview repositoryName={repositoryName}>
+            <Component {...pageProps} />
+          </PrismicPreview>
+        </PrismicProvider>
       </div>
     </RLSProvider>
   );
