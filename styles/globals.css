@@ -42,8 +42,9 @@ h2 span {
 }
 
 .first,
-.second {
-  height: 100vh;
+.second,
+.third {
+  min-height: 100vh;
   @apply flex justify-center flex-col;
 }
 

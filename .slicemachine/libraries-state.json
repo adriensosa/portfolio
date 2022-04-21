@@ -1,5 +1,82 @@
 {
   "slices": {
-    "components": {}
+    "components": {
+      "projects": {
+        "library": "slices",
+        "id": "projects",
+        "name": "Projects",
+        "description": "Projects",
+        "model": {
+          "id": "projects",
+          "type": "SharedSlice",
+          "name": "Projects",
+          "description": "Projects",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Projects",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "projects",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Exploit bricks-and-clicks e-business",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Dolore sit labore ullamco pariatur cillum do do labore cillum aliqua reprehenderit pariatur dolore ipsum.",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/adrien/Downloads/portfolio/.slicemachine/assets/slices/Projects/default/preview.png",
+            "width": 800,
+            "height": 336
+          }
+        }
+      }
+    }
   }
 }

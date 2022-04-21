@@ -1,6 +1,9 @@
 {
   "_cts": {
-    "projects": {},
+    "project": {},
     "homepage": {}
+  },
+  "slices": {
+    "Projects": {}
   }
 }
