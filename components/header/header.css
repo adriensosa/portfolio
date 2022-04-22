@@ -1,0 +1,42 @@
+header {
+  @apply sticky top-0;
+}
+
+header:after {
+  @apply border-b;
+  content: "";
+  display: block;
+  width: 0%;
+  transition: 1s ease-in-out;
+}
+
+html.has-scroll-init header:after {
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+
+header .container {
+  @apply flex justify-between py-5;
+}
+
+header nav ul {
+  @apply flex;
+}
+
+header nav ul li {
+  @apply uppercase opacity-0;
+  transform: translateY(-3px);
+  transition: 0.5s ease-in-out;
+}
+
+html.has-scroll-init header nav ul li {
+  @apply opacity-100;
+  transform: translateY(0px);
+  transition-delay: var(--delay);
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+header nav ul li:not(:last-child) {
+  @apply mr-8 uppercase;
+}

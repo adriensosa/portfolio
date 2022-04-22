@@ -9,9 +9,8 @@ module.exports = {
     },
     colors: {
       transparent: "transparent",
-      current: "currentColor",
-      content: "#000000",
-      main: {
+      black: "#15151e",
+      beige: {
         light: "#fafafa",
         regular: "#EAEDE4",
         dark: "#1a202c",

@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
-  @apply text-content bg-main-regular;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -41,10 +36,13 @@ h2 span {
   @apply inline-block font-PrestoWide;
 }
 
+.first {
+  min-height: calc(100vh - var(--header-height));
+}
+
 .first,
 .second,
 .third {
-  min-height: 100vh;
   @apply flex justify-center flex-col;
 }
 
@@ -55,13 +53,17 @@ h2 span {
 .second h1 {
   @apply whitespace-nowrap uppercase;
   line-height: 1.5;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px theme("colors.black");
   color: transparent;
 }
 
+.dark-mode .second h1 {
+  -webkit-text-stroke: 1px theme("colors.beige.regular");
+}
+
 .second div:nth-child(6) h1 {
-  @apply whitespace-nowrap uppercase text-content;
-  -webkit-text-stroke: 0px #000;
+  @apply whitespace-nowrap uppercase dark:text-beige-regular text-black;
+  -webkit-text-stroke: 0px;
 }
 
 .second div:nth-child(1) h1,

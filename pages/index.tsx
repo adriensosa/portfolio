@@ -149,7 +149,9 @@ export default function Home(props) {
         </div>
       </div>
       <div data-scroll-section className="third">
-        {RichText.asText(props.home.data.presentation)}
+        <div className="container">
+          {RichText.asText(props.home.data.presentation)}
+        </div>
       </div>
     </div>
   );
