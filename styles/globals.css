@@ -11,36 +11,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  @apply text-5xl opacity-0 font-PrestoWide uppercase tracking-wider;
-  display: block;
-  opacity: 0;
-  transform: translateY(100%) rotateX(-80deg);
-  transform-origin: center top;
-  transform-style: preserve-3d;
-  transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+main {
+  transition: all 0.5s ease-in-out;
 }
-
-html.has-scroll-init h1 {
-  opacity: 1;
-  transform: translateY(0);
-  transition-duration: 0.8s;
-  transition-delay: 0.1s;
-}
-
-h2 {
-  @apply text-3xl font-PrestoWide;
-}
-h2 span {
-  @apply inline-block font-PrestoWide;
-}
-
-.first {
-  min-height: calc(100vh - var(--header-height));
-}
-
-.first,
 .second,
 .third {
   @apply flex justify-center flex-col;
@@ -51,7 +24,7 @@ h2 span {
 }
 
 .second h1 {
-  @apply whitespace-nowrap uppercase;
+  @apply whitespace-nowrap text-5xl font-PrestoWide uppercase tracking-wider;
   line-height: 1.5;
   -webkit-text-stroke: 1px theme("colors.black");
   color: transparent;
@@ -62,7 +35,7 @@ h2 span {
 }
 
 .second div:nth-child(6) h1 {
-  @apply whitespace-nowrap uppercase dark:text-beige-regular text-black;
+  @apply whitespace-nowrap uppercase text-black dark:text-beige-regular;
   -webkit-text-stroke: 0px;
 }
 
@@ -89,4 +62,21 @@ h2 span {
 .second div:nth-child(5) h1,
 .second div:nth-child(7) h1 {
   @apply opacity-75;
+}
+
+/* animations */
+
+.fadeIn {
+  @apply opacity-0;
+  transform: translateY(-3px);
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+.fadeIn.is-inview {
+  @apply opacity-100;
+  transform: translateY(0px);
+  transition-delay: var(--delay);
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
 }

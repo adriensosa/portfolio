@@ -1,0 +1,22 @@
+.about-section {
+  @apply relative flex justify-center flex-col;
+  min-height: 100vh;
+}
+
+.about-section .container {
+  @apply flex justify-end items-center;
+}
+
+.about-section .container h1 {
+  @apply font-PrestoExtended text-7xl border border-solid p-2 border-black dark:border-beige-regular;
+  transform: translateX(140px) rotate(-90deg);
+  line-height: 1;
+  height: 85px;
+}
+.about-section .container h2 {
+  @apply font-PrestoLight text-4xl uppercase mb-6;
+}
+
+.about-section .container div {
+  max-width: 60%;
+}

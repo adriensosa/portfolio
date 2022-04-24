@@ -1,16 +1,34 @@
 import "../styles/globals.css";
+
 import "../styles/locomotiv-scroll.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Head from "next/head";
 import Header from "../components/header/header";
 import "../components/header/header.css";
+import "../components/hero-section/hero.css";
+import "../components/about/about.css";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import { isDarkMode } from "../utils/DarkMode";
+import { darkModeDetection } from "../utils/DarkMode";
+import { pixelAnimation } from "../components/hero-section/pixel-bg";
+import { ChangeBgColor, ResetBgColor } from "../utils/ChangeBgColor";
+
 const MyApp = ({ Component, pageProps }) => {
   const containerRef = useRef(null);
   useEffect(() => {
-    isDarkMode();
+    darkModeDetection();
   }, []);
+
+  const [crazy, setCrazy] = useState(false);
+
+  // if crazy is true, turns page crazy
+  useEffect(() => {
+    if (crazy) {
+      pixelAnimation(true);
+      ChangeBgColor();
+    } else {
+      ResetBgColor();
+    }
+  }, [crazy]);
 
   return (
     <div>
@@ -21,6 +39,18 @@ const MyApp = ({ Component, pageProps }) => {
         <link
           rel="preload"
           href="/fonts/PrestoWide.otf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/PrestoLight.otf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/PrestoExtended.otf"
           as="font"
           crossOrigin=""
         />
@@ -37,7 +67,7 @@ const MyApp = ({ Component, pageProps }) => {
           className="bg-beige-regular dark:bg-black text-black dark:text-beige-regular"
           ref={containerRef}
         >
-          <Header />
+          <Header setCrazy={setCrazy} crazy={crazy} />
           <Component {...pageProps} />
           <footer data-scroll-section>footer</footer>
         </main>

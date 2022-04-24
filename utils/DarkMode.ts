@@ -1,7 +1,9 @@
-const isDarkMode = () => {
+const darkModeDetection = () => {
   // check if browser is in dark mode;
-  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  ToggleDarkMode(isDarkMode);
+  const darkModeDetection = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  ToggleDarkMode(darkModeDetection);
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) => {
@@ -9,8 +11,15 @@ const isDarkMode = () => {
     });
 };
 
-const ToggleDarkMode = (isDarkMode: boolean) => {
-  if (isDarkMode) {
+const isDarkMode = () => {
+  const darkModeDetection = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  return darkModeDetection;
+};
+
+const ToggleDarkMode = (darkModeDetection: boolean) => {
+  if (darkModeDetection) {
     document.body.classList.add("dark-mode");
     document.body.classList.remove("light-mode");
   } else {
@@ -19,4 +28,4 @@ const ToggleDarkMode = (isDarkMode: boolean) => {
   }
 };
 
-export { isDarkMode };
+export { darkModeDetection, isDarkMode };

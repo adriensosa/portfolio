@@ -12,12 +12,14 @@ module.exports = {
       black: "#15151e",
       beige: {
         light: "#fafafa",
-        regular: "#EAEDE4",
+        regular: "#E9EADE",
         dark: "#1a202c",
       },
     },
     fontFamily: {
       PrestoWide: ["PrestoWide", "sans-serif"],
+      PrestoLight: ["PrestoLight", "sans-serif"],
+      PrestoExtended: ["PrestoExtended", "sans-serif"],
     },
   },
 };

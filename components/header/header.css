@@ -24,19 +24,49 @@ header nav ul {
 }
 
 header nav ul li {
-  @apply uppercase opacity-0;
-  transform: translateY(-3px);
-  transition: 0.5s ease-in-out;
+  @apply uppercase;
 }
 
-html.has-scroll-init header nav ul li {
-  @apply opacity-100;
-  transform: translateY(0px);
-  transition-delay: var(--delay);
-  transition-timing-function: ease-in-out;
-  transition-duration: 0.5s;
+header nav ul li span {
+  @apply cursor-pointer relative uppercase font-PrestoLight px-1;
+  font-size: 24px;
+  transition: 0.6s ease-in-out;
+}
+
+header nav ul li span:hover {
+}
+
+header nav ul li span:after {
+  @apply border-b w-0 left-0 absolute;
+  content: "";
+  transition: 0.3s ease-in-out;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+header nav ul li span:hover:after {
+  width: 100%;
+  transition: 0.3s ease-in-out;
 }
 
 header nav ul li:not(:last-child) {
   @apply mr-8 uppercase;
+}
+
+/* crazy toggle */
+
+.crazy-toggle {
+  @apply flex items-center border border-solid relative p-1 cursor-pointer;
+  width: 70px;
+  border-radius: 100px;
+}
+
+.crazy-toggle svg {
+  @apply fill-black dark:fill-beige-regular inline-block;
+  transition: 0.6s ease-in-out;
+  transform: translateX(0px) rotate(0deg);
+}
+
+.crazy-toggle[data-crazy="true"] svg {
+  transform: translateX(34px) rotate(180deg);
 }
